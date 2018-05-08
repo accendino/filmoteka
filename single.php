@@ -23,11 +23,12 @@ if ( @$_GET['action'] == 'delete') {
 	}
 
 
-$films = films_all($link);
+$film = get_film($link, $_GET['id']);
+
 
 include('templates/head.tpl');
 include('templates/notifications.tpl');
-include('templates/index.tpl');
+include('templates/film-single.tpl');
 include('templates/foot.tpl');
 
 ?>

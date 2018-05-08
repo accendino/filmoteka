@@ -15,8 +15,7 @@ body::before {
   content: "";
   display: block;
   width: 1px;
-  height: 1px;
-  background-color: transparent;
+  height: 1px   background-color: transparent;
 }
 input,
 textarea {
@@ -244,14 +243,8 @@ input.button {           /*заменили ссылку не инпут*/
   line-height: 1;
   outline: none;
   border-width: 2px;
-  border-color: #dde8ee;
   border-style: solid;
   border-radius: 22px;
-  height: 2.75em;
-  padding-top: 0.68em;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  color: #037EC6;
   background: #FFF;
   cursor: pointer;
   text-decoration: none;
@@ -259,6 +252,10 @@ input.button {           /*заменили ссылку не инпут*/
   color: #FFF;
   border-color: #ffba00;
   background-color: #ffba00;
+  font-weight: 700;
+  padding: 6px 20px;
+  font-size: 14px;
+  height: 32px;
 }
 .button--edit:hover,
 .button--edit:focus {
@@ -289,12 +286,6 @@ input.button {           /*заменили ссылку не инпут*/
   border-color: #dde8ee;
   border-style: solid;
   border-radius: 22px;
-  height: 2.75em;
-  padding-top: 0.68em;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  color: #037EC6;
-  background: #FFF;
   cursor: pointer;
   text-decoration: none;
   font-weight: 700;
@@ -702,7 +693,7 @@ a.button--login:active {
   transition: -webkit-box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
-  height: 200px;
+  height: 100px;
   resize: vertical;
 }
 .textarea:active,
@@ -1276,11 +1267,12 @@ a.title,
 }
 .admin-nav__link {
   margin-right: 20px;
-  color: #000;
-  text-decoration: none;
+  color: #037ec6;
+  text-decoration: underline;
 }
 .admin-nav__link:hover {
   color: #037ec6;
+  text-decoration: underline;
 }
 .admin-nav__link:last-child {
   margin-right: 0;
@@ -2073,3 +2065,39 @@ a.button--edit:focus,
   color: #FFF;
   padding: 5px 15px;
 }
+
+.button--info {
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  display: inline-block;
+  line-height: 1;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 22px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 20px;
+  font-size: 14px;
+  height: 32px;
+}
+/*.button--info:hover,
+.button--info:focus {
+  //border-color: #DDE8EE;
+  //background-color: #DDE8EE;
+}
+.button--info:active {
+  //border-color: #b4dff6;
+  //background-color: #b4dff6;
+}
+.button--info:hover,
+.button--info:focus {
+  //border-color: #ffcf3e;
+  //background-color: #ffcf3e;
+}
+.button--info:active {
+  //border-color: #f29a00;
+  //background-color: #f29a00;
+}*/
