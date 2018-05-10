@@ -1,7 +1,7 @@
 <?php
 
+// ПОЛУЧАЕМ ФИЛЬМЫ ИЗ БД
 function films_all($link){
-	// ПОЛУЧАЕМ ФИЛЬМЫ ИЗ БД
 	//подготовили запрос
 	$query = "SELECT * FROM films";
 	//создаем пустой массив куда будем записывать полученные данные, наша таблица
@@ -17,9 +17,9 @@ function films_all($link){
 	return $films;
 }
 
+//запись в БД НОВОГО ФИЛЬМА
 function film_new($link, $title, $genre, $year, $description){
 
-	//запись в БД 
 	// формируем запрос, к-й отправляет полученные данные в БД
 	//$query = "INSERT INTO films ('title', 'genre', 'year')" VALUES ($_POST['title']); эта запись ненадежна по причине mysqli-инъекций, поэтому обрабатываем функцией mysqli_real_escape_string, которая экранирует все опасные символы:
 	$query = "INSERT INTO films (title, genre, year, description) VALUES (
@@ -43,14 +43,10 @@ function film_new($link, $title, $genre, $year, $description){
 	return $result;
 }
 
+// ПОЛУЧАЕМ ФИЛЬМ ИЗ БД
 function get_film($link, $id) {
-	// ПОЛУЧАЕМ ФИЛЬМ ИЗ БД
 	//подготовили запрос
 	$query = "SELECT * FROM films WHERE id = ' ". mysqli_real_escape_string($link, $id) . "' LIMIT 1 "; 
-
-
-	//создаем пустой массив куда будем записывать полученные данные, наша таблица
-	//$film = array();
 
 
 	//выполняем этот запрос с помощью функции mysql_query() и записываем результат в переменную $result
@@ -58,21 +54,19 @@ function get_film($link, $id) {
 
 	//выполняем ф-ю mysqli_fetch_array(result) - при каждом её вызове получает новую строчку из запроса к базе данных и возвращает её. если функция mysqli_query($link, $query) выполняется успешно и результат записывается в звпрос, то 
 	if ($result = mysqli_query($link, $query)) {  
-		//while ($row = mysqli_fetch_array($result)) {   //то разбираем результат и каждый следующий новый ряд из таблицы записываем в переменную $row
-		//	$film[] = $row; //формируем наш массив films, 'наполняем' полученными данными добавляем каждый новый полученный ряд в массив films
-		//}
+
 		$film = mysqli_fetch_array($result);
 	}
 
 	return $film;
 }
 
+//запись в БД ИЗМЕНЕНИЙ
 function film_update($link, $title, $genre, $year, $id, $description){ //при отправке файлов через форму они попадают во врем.директ-ю на сервере, инфо об отправленных файлах содержится в глобальном массиве $_FILES, получаем его данные:
-	echo "<pre>";
-	print_r($_FILES);
-	echo "</pre>";
+	// echo "<pre>";
+	// print_r($_FILES);
+	// echo "</pre>";
 	
-
 	//проверяем, если у картинки есть времм.адрес (т.е. была загружена и размещена), то обрабатываем картинку (уменьшаем и размещаем)..; записываем данные мссива в переменные:
 	if (isset($_FILES['photo']['name']) && $_FILES['photo']['tmp_name'] !="") {
 		//создаем переменную, куда запишем имя картинки
@@ -107,7 +101,6 @@ function film_update($link, $title, $genre, $year, $id, $description){ //при 
 		}
 
 		//кроме имен также будем прописывать путь к файлу, создаемпеременную (массив)
-		//$photoFolderLoc = ROOT . 'data/films/';
 		$photoFolderLocation = ROOT . 'data/films/full/';
 		$photoFolderLocationMin = ROOT . 'data/films/min/';
 
@@ -153,6 +146,7 @@ function film_update($link, $title, $genre, $year, $id, $description){ //при 
 	return $result;
 }
 
+//УДАЛЕНИЕ ФИЛЬМА
 function film_delete($link, $id){
 	$query = "DELETE FROM films WHERE id = ' " . mysqli_real_escape_string($link, $id) . "' LIMIT 1";
 
