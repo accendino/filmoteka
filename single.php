@@ -7,7 +7,7 @@ require('database.php');
 $link = db_connect();
 //ПОДКЛЮЧАЕМ МОДЕЛЬ ДЛЯ РАБОТЫ С ФИЛЬМАМИ
 require('models/films.php');
-
+require('functions/login-functions.php');
 
 //уДАЛЕНИЕ ФИЛЬМА
 

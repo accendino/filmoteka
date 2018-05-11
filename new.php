@@ -6,6 +6,7 @@ require('database.php');
 $link = db_connect();
 //ПОДКЛЮЧАЕМ МОДЕЛЬ ДЛЯ РАБОТЫ С ФИЛЬМАМИ
 require('models/films.php');
+require('functions/login-functions.php');
 
 
 if (array_key_exists('add-film', $_POST)) { //если присутствует указанный ключ в массиве $_POST(значит именно форма "добавить фильм" была отправлена), то выполняем следующее..

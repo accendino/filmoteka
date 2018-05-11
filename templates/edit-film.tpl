@@ -24,12 +24,12 @@
 			</div>
 			<div class="col">
 				<label class="label-title">Год</label>
-				<input class="input" type="text" placeholder="год.." name="year" value="<?=$film['year']?>" />
+				<input class="input" type="text" placeholder="год.." name="year" value="<?=$film['year']?>" >
 			</div>
 		</div>
 		<textarea class="textarea mb-20" name="description" placeholder="Оставьте описание.."><?=$film['description']?></textarea>
 		<div class="mb-20">
-			<input type="file" name="photo"/>
+			<input type="file" name="photo">
 		</div>
 		<input type="submit" class="button" value="Обновить" name="update-film">
 	</form>

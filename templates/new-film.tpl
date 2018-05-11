@@ -20,11 +20,11 @@
 		<div class="row">
 			<div class="col">
 				<label class="label-title">Жанр</label>
-				<input class="input" type="text" placeholder="жанр.." name="genre"/>
+				<input class="input" type="text" placeholder="жанр.." name="genre">
 			</div>
 			<div class="col">
 				<label class="label-title">Год</label>
-				<input class="input" type="text" placeholder="год.." name="year"/>
+				<input class="input" type="text" placeholder="год.." name="year">
 			</div>
 		</div>
 

@@ -14,4 +14,6 @@ define('ROOT', dirname(__FILE__) . '/');
 
 //phpinfo();
 
+session_start(); //начинаем сессию
+
 ?>
